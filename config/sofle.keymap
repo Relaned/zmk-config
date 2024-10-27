@@ -32,20 +32,20 @@
         default_layer {
             display-name = "default";
 // ------------------------------------------------------------------------------------------------------------
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
+// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  GUI  |
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// |  CTRL |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | CTRL  |
-//               | GUI | ALT  | SHIFT| LOWER|  SPACE |  | ENTER | RAISE| SHIFT | ALT   | GUI  |
+// |  CTRL |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |  GUI  |  N   |  M    |  ,    |  .   |   /   | CTRL  |
+//               |LBKT | ALT  | SHIFT| LOWER|  SPACE |  | ENTER | RAISE| SHIFT | ALT   | RBKT |
             bindings = <
-&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
+&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp RGUI
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
 &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RCTRL
-                 &kp LGUI &kp LALT &kp LSHFT &mo LOWER  &kp SPACE  &kp RET    &mo RAISE  &kp RSHFT &kp RALT  &kp RGUI
+&kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &kp LGUI   &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RCTRL
+                 &kp LBKT &kp LALT &kp LSHFT &mo LOWER  &kp SPACE  &kp RET    &mo RAISE  &kp RSHFT &kp RALT  &kp RBKT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         lower_layer {
@@ -65,7 +65,7 @@
                     &trans    &trans      &trans    &trans     &trans &trans  &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         raise_layer {
@@ -73,7 +73,7 @@
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |         |       |          |       |       |
 // |       | INS  | PSCR | GUI   |       |      |                |      |   HOME  |   ^   |   END    |  DEL  | BKSPC |
-// |       | ALT  | CTRL | SHIFT |       | CAPS |                |      |   <-    |   v   |    ->    |  DEL  |       |
+// |       | ALT  | CTRL | SHIFT |       | CAPS |                |      |   <-    |   v   |    ->    |       |       |
 // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |CTRL+LEFT|       |CTRL+RIGHT|       |       |
 //                |      |       |       |      |      |  |      |      |         |       |          |
             bindings = <
@@ -84,7 +84,7 @@
                         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans               &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         adjust_layer {
